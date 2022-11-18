@@ -13,7 +13,7 @@ Choose:
 
 class Vehicle:
 
-    def init(self, v_type, v_number):
+    def __init__(self, v_type, v_number):
         self.v_type = v_type
         self.v_number = v_number
         self.vehicle_types = {1: 'c', 2: 'b', 3: 't'}
@@ -24,7 +24,7 @@ class Vehicle:
 
 class Slot:
 
-    def init(self):
+    def __init__(self):
         self.vehicle = None
 
     @property
@@ -34,7 +34,7 @@ class Slot:
 
 class Parking:
 
-    def init(self, rows, columns):
+    def __init__(self, rows, columns):
         self.rows = rows
         self.columns = columns
         self.slots = self._get_slots(rows, columns)
@@ -172,6 +172,6 @@ def main():
         print(colored(f"An error occurred: {e}", "red"))
 
 
-if _name_ == 'main':
+if __name__ == '__main__':
     colorama.init()  # To enable color visible in command prompt
     main()
